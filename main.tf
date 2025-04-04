@@ -1,17 +1,14 @@
-terraform {     
-        backend "remote" {
-         # The name of your Terraform Cloud organization.
-           organization = "Demo-Project"
+terraform {
+  backend "remote" {
+    organization = "Demo-Project"  # Check this name carefully
 
-         # The name of the Terraform Cloud workspace to store Terraform state files in.
-        workspaces {
-           name = "demo-workspace"
-         }
-      }
-    
+    workspaces {
+      name = "demo-workspace"  # Ensure this workspace exists
+    }
+  }
 }
 
 resource "azurerm_resource_group" "example" {
   name     = "example"
-  location = "central india"
+  location = "Central India"  # Location name is case-sensitive (Capital "C" in "Central India")
 }
